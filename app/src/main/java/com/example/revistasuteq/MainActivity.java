@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                     @Override
                     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                        if(position==0){
+                        /*if(position==0){
                             viewPager.setBackgroundResource(R.drawable.portada1);
                             //viewPager.setBackgroundColor((Integer) argbEvaluator.evaluate(positionOffset, colores[position],colores[position+1]));
                         }
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         if(position==2){
                             viewPager.setBackgroundResource(R.drawable.portada3);
-                        }
+                        }*/
                     }
 
                     @Override
