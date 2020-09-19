@@ -11,25 +11,26 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.revistasuteq.Clases.GlideApp;
+import com.example.revistasuteq.Modelos.ModEdiciones;
 import com.example.revistasuteq.Modelos.ModRevistas;
 import com.example.revistasuteq.R;
 
 import java.util.List;
 
-public class AdapRevistas extends PagerAdapter {
+public class AdapEdiciones extends PagerAdapter {
 
-    private List<ModRevistas> modRevistas;
+    private List<ModEdiciones> modEdiciones;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public AdapRevistas(List<ModRevistas> modRevistas, Context context) {
-        this.modRevistas = modRevistas;
+    public AdapEdiciones(List<ModEdiciones> modEdiciones, Context context) {
+        this.modEdiciones = modEdiciones;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return modRevistas.size();
+        return modEdiciones.size();
     }
 
     @Override
@@ -41,28 +42,24 @@ public class AdapRevistas extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
         layoutInflater=LayoutInflater.from(context);
-        View view=layoutInflater.inflate(R.layout.itemrevistas, container, false);
+        View view=layoutInflater.inflate(R.layout.itemediciones, container, false);
 
         ImageView imgPortada;
-        TextView txtTitulo;
+        TextView txtTitulo, txtTituloCab;
         TextView txtDescripcion;
 
-        imgPortada=view.findViewById(R.id.imgRevisLogo);
-        txtTitulo= view.findViewById(R.id.txtRevisTitulo);
-        txtDescripcion= view.findViewById(R.id.txtRevisDescr);
+        imgPortada=view.findViewById(R.id.imgEdiPort);
+        txtTitulo= view.findViewById(R.id.txtEdiTitulo);
+        txtTituloCab=view.findViewById(R.id.txtEdiTituloCab);
+        txtDescripcion= view.findViewById(R.id.txtEdiDescri);
 
+        GlideApp.with(context).load(modEdiciones.get(position).getCover()).into(imgPortada);
 
-        GlideApp.with(context).load(modRevistas.get(position).getPortada()).into(imgPortada);
+        txtTitulo.setText(modEdiciones.get(position).getTitle());
 
-        txtTitulo.setText(modRevistas.get(position).getName());
-        txtDescripcion.setText(modRevistas.get(position).getDescription()
-                .replace("</p>","\n")
-                .replace("<p>","")
-                .replace("<strong>","")
-                .replace("</strong>","")
-                .replace("<em>","")
-                .replace("</em>","")
-                .replace("<br />",""));
+        txtDescripcion.setText("Vol. "+modEdiciones.get(position).getVolume()
+                +" Núm. "+modEdiciones.get(position).getNumber()
+                +" ("+modEdiciones.get(position).getYear()+")");
 
         container.addView(view,0);
         return view;

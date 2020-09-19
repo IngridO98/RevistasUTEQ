@@ -11,17 +11,16 @@
        android:layout_width="match_parent"
        android:layout_height="250dp"
        android:background="@color/color1">
-
    </View>
 
    <androidx.viewpager.widget.ViewPager
        android:id="@+id/viewPager"
        android:layout_width="match_parent"
        android:layout_height="670dp"
-       android:layout_alignParentTop="true"
-       android:layout_alignParentBottom="true"
-       android:layout_centerHorizontal="true"
-       android:layout_marginTop="120dp"
+       android:layout_above="@+id/btnResIr"
+       android:layout_below="@+id/view"
+       android:layout_alignParentStart="true"
+       android:layout_marginTop="-40dp"
        android:layout_marginBottom="0dp"
        android:background="@android:color/transparent"
        android:backgroundTintMode="screen"
@@ -31,6 +30,7 @@
 
 
    </androidx.viewpager.widget.ViewPager>
+
    <RelativeLayout
        android:layout_width="match_parent"
        android:layout_height="250dp">
@@ -74,13 +74,20 @@
 
 
 
-   <RelativeLayout
-       android:layout_width="match_parent"
-       android:layout_height="70dp"
-       android:layout_alignParentBottom="true"
-       android:layout_marginBottom="0dp">
 
-   </RelativeLayout>
+   <Button
+       android:id="@+id/btnResIr"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+       android:paddingLeft="30dp"
+       android:paddingRight="25dp"
+
+       android:layout_centerInParent="true"
+       android:layout_marginBottom="15dp"
+       android:background="@drawable/round"
+       android:text="IR"
+       android:textSize="18dp"/>
 
 
 
