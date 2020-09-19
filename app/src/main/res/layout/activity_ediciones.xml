@@ -15,12 +15,12 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPagerEdi"
         android:layout_width="match_parent"
-        android:layout_height="670dp"
+        android:layout_height="600dp"
         android:layout_below="@+id/view"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="30dp"
         android:background="@android:color/transparent"
         android:backgroundTintMode="screen"
         android:clipToPadding="false"
@@ -78,5 +78,17 @@
             android:textSize="24sp"
             android:textStyle="bold|italic" />
     </RelativeLayout>
+    <Button
+        android:id="@+id/btnEdiIr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round"
+        android:text="IR"
+        android:textSize="18dp"/>
 
 </RelativeLayout>

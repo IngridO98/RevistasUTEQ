@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/txtDocTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="TiTULO"/>
+                <TextView
+                    android:id="@+id/txtDocAutores"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="aqui..."/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <Button
+                            android:id="@+id/btnPDF"
+                            android:layout_width="55dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/round"
+                            android:text="PDF"
+                            android:textSize="14dp"
+                            tools:visibility="invisible" />
+
+                        <Button
+                            android:id="@+id/btnHTML"
+                            android:layout_width="55dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/round"
+                            android:text="HTML"
+                            android:textSize="14dp"
+                            tools:visibility="invisible" />
+
+                    </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+</LinearLayout>

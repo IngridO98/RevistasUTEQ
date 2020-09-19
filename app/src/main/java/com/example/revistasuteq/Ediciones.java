@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.animation.ArgbEvaluator;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,11 +31,12 @@ public class Ediciones extends AppCompatActivity {
     Retrofit retrofit;
     ViewPager viewPager;
     AdapEdiciones adapEdiciones;
-    ArgbEvaluator argbEvaluator=new ArgbEvaluator();
+
     List<ModEdiciones> listaEdiciones=new ArrayList<>();
 
     TextView txtEdiTituloCab, txtEdiAbrevia, txtTituCard;
     String IdRevista;
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +44,7 @@ public class Ediciones extends AppCompatActivity {
 
         txtEdiTituloCab= findViewById(R.id.txtEdiTituloCab);
         txtEdiAbrevia= findViewById(R.id.txtEdiAbreCab);
+        button= findViewById(R.id.btnEdiIr);
 
 
         Bundle bundle = this.getIntent().getExtras();
@@ -77,7 +82,25 @@ public class Ediciones extends AppCompatActivity {
             }
         });
 
-
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position=viewPager.getCurrentItem();
+                Intent intent = new Intent(Ediciones.this, Documentos.class);
+                Bundle pasar= new Bundle();
+                //pasar.putString("Mensaje", "Login Exitoso!");
+                pasar.putString("Id", listaEdiciones.get(position).getIssue_id());
+                pasar.putString("Titulo", "Vol. "+listaEdiciones.get(position).getVolume()
+                        +" Núm. "+listaEdiciones.get(position).getNumber()
+                        +" ("+listaEdiciones.get(position).getYear()+"): "
+                        +listaEdiciones.get(position).getTitle());
+                pasar.putString("Doi", listaEdiciones.get(position).getDoi());
+                pasar.putString("Publicada", listaEdiciones.get(position).getDate_published());
+                intent.putExtras(pasar);
+                //Iniciamos la nueva actividad
+                startActivity(intent);
+            }
+        });
 
 
 

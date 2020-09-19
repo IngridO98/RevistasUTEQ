@@ -1,5 +1,7 @@
 package com.example.revistasuteq.Interfaces;
 
+import com.example.revistasuteq.Modelos.ModCategorias;
+import com.example.revistasuteq.Modelos.ModDocumentos;
 import com.example.revistasuteq.Modelos.ModEdiciones;
 import com.example.revistasuteq.Modelos.ModRevistas;
 
@@ -16,4 +18,10 @@ public interface RetrofitInterfaz {
 
     @GET
     Call<List<ModEdiciones>> getEdiciones(@Url String url);
+
+    @GET
+    Call<List<ModCategorias>> getModCategorias(@Url String url);
+
+    @GET
+    Call<List<ModDocumentos>> getModDocumentos(@Url String url);
 }

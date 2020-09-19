@@ -6,54 +6,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Documentos">
-    <TextView
-        android:id="@+id/txtEdiDoi"
-        android:autoLink="all"
-        android:clickable="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_toEndOf="@+id/textView"
-        android:drawablePadding="10dp"
-        android:ellipsize="end"
-        android:text="aqui va la descripcion " />
 
-    <TextView
-        android:id="@+id/txtEdiPublic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtEdiDoi"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_toEndOf="@+id/textView3"
-        android:drawablePadding="10dp"
-        android:ellipsize="end"
-        android:text="aqui va la descripcion " />
+    <RelativeLayout
+        android:id="@+id/rltvDoc"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/color1">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtEdiTitulo"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:text="DOI:"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txtEdiTituloCab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Universidad Técnica Estatal de Quevedo"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:textStyle="bold|italic" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:text="Publicado:"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txtEdiDoi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEdiTituloCab"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_toEndOf="@+id/textView"
+            android:autoLink="all"
+            android:clickable="true"
+            android:drawablePadding="10dp"
+            android:ellipsize="end"
+            android:text="aqui va la descripcion "
+            android:textColor="#ffff" />
+
+        <TextView
+            android:id="@+id/txtEdiPublic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEdiDoi"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_toEndOf="@+id/textView3"
+            android:drawablePadding="10dp"
+            android:ellipsize="end"
+            android:textColor="#ffff"
+            android:text="aqui va la descripcion " />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEdiTituloCab"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="DOI:"
+            android:textColor="@color/coloramarillo"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/coloramarillo"
+            android:text="Publicado:"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGeneral"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rltvDoc"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="172dp" />
+
 
 </RelativeLayout>
